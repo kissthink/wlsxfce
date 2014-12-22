@@ -26,6 +26,9 @@ or use sbopkg to manage your SBo packages.
 * gst1-plugins-base
 * gst1-plugins-good
 * gstreamer1
+* libburn
+* libisofs
+* libisoburn
 * libunique
 * perl-extutils-depends
 * perl-extutils-pkgconfig
