@@ -23,6 +23,6 @@ After successfully building a package, the xfce4.SlackBuild script will try to I
 or REPLACING already installed XFCE package(s) in the system. So BACKUP your system first
 if you think this method is not safe.
 
-Please see the LICENSE file for more information about this build system.
+Please see the <a href="LICENSE">LICENSE</a> file for more information about this build system.
 
 You have been warned!
