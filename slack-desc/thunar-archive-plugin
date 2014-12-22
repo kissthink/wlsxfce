@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+                     |-----handy-ruler------------------------------------------------|
+thunar-archive-plugin: thunar-archive-plugin (Thunar Archive Plugin)
+thunar-archive-plugin: 
+thunar-archive-plugin: The Thunar Archive Plugin allows you to create and extract
+thunar-archive-plugin: archive files using the file context menus in the Thunar
+thunar-archive-plugin: file manager.
+thunar-archive-plugin: 
+thunar-archive-plugin: 
+thunar-archive-plugin: 
+thunar-archive-plugin: 
+thunar-archive-plugin: 
+thunar-archive-plugin: 

@@ -1,0 +1,1 @@
+OPTS="--enable-xrandr --enable-libnotify --enable-xcursor --enable-libxklavier --enable-pluggable-dialogs --enable-sound-settings"

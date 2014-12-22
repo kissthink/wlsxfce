@@ -1,0 +1,1 @@
+OPTS="--enable-gio-unix --enable-gtk3"

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# We don't want icon caches:
+find $PKG/usr/share/icons -type f -name "icon-theme.cache" -exec rm -f {} \;
+

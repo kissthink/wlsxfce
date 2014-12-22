@@ -1,0 +1,2 @@
+SLKCFLAGS="$SLKCFLAGS -I/usr/include/libical"
+SLKLDFLAGS="$SLKLDFLAGS -L/usr/lib$LIBDIRSUFFIX `pkg-config --libs gtk+-2.0 gdk-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 gdk-x11-2.0 libical`"

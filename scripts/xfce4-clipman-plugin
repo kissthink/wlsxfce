@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
+mv $PKG/usr/share/doc/xfce4-clipman-plugin/html $PKG/usr/doc/$PRGNAM-$VERSION
+rm -rf $PKG/usr/share/doc

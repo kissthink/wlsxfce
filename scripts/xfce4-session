@@ -1,0 +1,9 @@
+#!/bin/sh
+
+mkdir -p $PKG/etc/X11/xinit
+( cd $PKG/etc/X11/xinit ; ln -sf /etc/xdg/xfce4/xinitrc xinitrc.xfce )
+chmod +x $PKG/etc/xdg/xfce4/xinitrc
+
+# We don't want icon caches:
+find $PKG/usr/share/icons -type f -name "icon-theme.cache" -exec rm -f {} \;
+
