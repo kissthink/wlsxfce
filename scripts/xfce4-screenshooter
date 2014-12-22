@@ -1,6 +1,7 @@
 #!/bin/sh
 
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 if [ -d $PKG/usr/share/doc/xfce4-screenshooter ]; then # --docdir was ignored
-  mv $PKG/usr/share/doc/xfce4-screenshooter/* $PKG/usr/doc/$PKGNAM-$VERSION
+  mv $PKG/usr/share/doc/xfce4-screenshooter/* $PKG/usr/doc/$PRGNAM-$VERSION
   ( cd $PKG/usr/share ; rmdir -p doc/xfce4-screenshooter )
 fi

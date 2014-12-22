@@ -57,11 +57,17 @@ fi
 
 set -e
 
-LIST="$1"
+rm -f /tmp/xfce4.list
+while [ $# -ne 0 ]; do
+  echo "$1" >> /tmp/xfce4.list
+  shift
+done
 
-if [ ! "$LIST" = "" ]; then
-  LIST="$LIST"
+if [ -f /tmp/xfce4.list ]; then
+  echo "Using package list from /tmp/xfce4.list"
+  LIST="`cat /tmp/xfce4.list`"
 else
+  echo "Using default list"
   LIST="`cat $CWD/xfce4.list`"
 fi
 
@@ -166,7 +172,9 @@ for PRGNAM in $LIST; do
 
     # Additional script
     if [ -f $CWD/scripts/$PRGNAM ]; then
-      /bin/sh $CWD/scripts/$PRGNAM
+      echo "Running additional scripts for $PRGNAM"
+      source $CWD/scripts/$PRGNAM || exit 1
+      sleep 5
     fi
 
     find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
