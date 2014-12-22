@@ -22,14 +22,14 @@ DEPENDENCIES
 You can find and install all the dependencies from http://slackbuilds.org/
 or use sbopkg to manage your SBo packages.
 
-gst1-libav
-gst1-plugins-base
-gst1-plugins-good
-gstreamer1
-libunique
-perl-extutils-depends
-perl-extutils-pkgconfig
-perl-glib
+* gst1-libav
+* gst1-plugins-base
+* gst1-plugins-good
+* gstreamer1
+* libunique
+* perl-extutils-depends
+* perl-extutils-pkgconfig
+* perl-glib
 
 WARNING
 =======
