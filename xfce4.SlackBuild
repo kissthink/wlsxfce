@@ -23,7 +23,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. FURTHERMORE I AM NOT LIABLE IF
 # YOUR DATA IS DESTROYED, YOUR HOUSE BURNS DOWN OR YOUR DOG RUNS OFF.
 
-BUILD=1
 TAG=${TAG:-_wls}
 NUMJOBS=${NUMJOBS:--j4}
 
@@ -64,10 +63,8 @@ while [ $# -ne 0 ]; do
 done
 
 if [ -f /tmp/xfce4.list ]; then
-  echo "Using package list from /tmp/xfce4.list"
   LIST="`cat /tmp/xfce4.list`"
 else
-  echo "Using default list"
   LIST="`cat $CWD/xfce4.list`"
 fi
 
@@ -79,6 +76,7 @@ for PRGNAM in $LIST; do
     VERSION="$VERSION"
   else
     echo "Finding version for $PRGNAM automatically in ../src/"
+    echo
     if [ -e $CWD/src/$PRGNAM-*.tar.?z* ]; then
       VERSION="`basename $CWD/src/$PRGNAM-*.tar.?z* | rev | cut -d . -f 3- | cut -d - -f 1| rev`"
     else
@@ -87,12 +85,17 @@ for PRGNAM in $LIST; do
     fi
   fi
 
+  # Incremental build number
+  source $CWD/buildnum.sh
+
   if [ -f $CWD/src/$PRGNAM-$VERSION.tar.?z* ]; then
-    echo "====================================================================="
-    echo 
-    echo "Building $PRGNAM-$VERSION"
-    echo 
-    echo "====================================================================="
+    echo "================================================================="
+    echo
+    echo "  Building $PRGNAM-$VERSION-$ARCH-$BUILD$TAG"
+    echo
+    echo "================================================================="
+    echo
+    sleep 5
 
     WRK=${WRK:-/tmp/wlsbuild}
     PKG=$WRK/package-$PRGNAM
@@ -174,7 +177,6 @@ for PRGNAM in $LIST; do
     if [ -f $CWD/scripts/$PRGNAM ]; then
       echo "Running additional scripts for $PRGNAM"
       source $CWD/scripts/$PRGNAM || exit 1
-      sleep 5
     fi
 
     find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
@@ -220,7 +222,6 @@ for PRGNAM in $LIST; do
     echo "Cleaning up build directory"
     cd $WRK; rm -rf $PRGNAM-$VERSION; rm -rf $PKG
     echo
-    sleep 3
   else
     echo "Error: Could not found $PRGNAM-$VERSION source."
     echo "Exit"
